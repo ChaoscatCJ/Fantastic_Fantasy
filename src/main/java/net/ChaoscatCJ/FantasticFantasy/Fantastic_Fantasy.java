@@ -18,9 +18,14 @@ import org.slf4j.Logger;
 class Fantastic_Fantasy {
     public static final String MOD_ID = "fantastic_fantasy";
     public static final Logger LOGGER = LogUtils.getLogger();
+    private Object ModItems;
 
     public Fantastic_Fantasy() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeModTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -34,18 +39,20 @@ class Fantastic_Fantasy {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SAR_METAL_INGOT);
+            event.accept(ModItems.RAW_STAR_METAL);
 
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
+        // You can use SubscribeEvent and let the Event Bus discover methods to call
+        public void onServerStarting(ServerStartingEvent event) {
 
-    }
+        }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
+    class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
