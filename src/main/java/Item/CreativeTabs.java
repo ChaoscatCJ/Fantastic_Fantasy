@@ -17,8 +17,8 @@ public class ModCreativeModTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STAR_METAL.get()))
                     .title(Component.translatable("creativetab.tutorial_tab"))
                     .displayItems((pParameters, pOutput) -> {
-                        pOutput.accept(ModItems.STAR_METAL.get());
-                        pOutput.accept(ModItems.RAW_STAR_METAL.get());
+                        pOutput.accept(net.ChaoscatCJ.FantasticFantasy.item.ModItems.STAR_METAL_INGOT.get());
+                        pOutput.accept(net.ChaoscatCJ.FantasticFantasy.item.ModItems.RAW_STAR_METAL.get().get());
 
 
                     })
