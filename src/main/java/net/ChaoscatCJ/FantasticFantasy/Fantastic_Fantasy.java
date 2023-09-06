@@ -46,7 +46,7 @@ class Fantastic_Fantasy {
     }
 
         // You can use SubscribeEvent and let the Event Bus discover methods to call
-        public void onServerStarting(ServerStartingEvent event) {
+        public void onServerStarting;(ServerStartingEvent event) {
 
         }
 
