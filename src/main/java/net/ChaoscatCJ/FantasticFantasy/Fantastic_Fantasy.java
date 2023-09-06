@@ -43,10 +43,13 @@ class Fantastic_Fantasy {
             event.accept(ModItems.SAR_METAL_INGOT);
             event.accept(ModItems.RAW_STAR_METAL);
 
-    }
+            public void onServerStarting;
+        } else {
+            public void onServerStarting;
+        }
 
         // You can use SubscribeEvent and let the Event Bus discover methods to call
-        public void onServerStarting;(ServerStartingEvent event) {
+        (ServerStartingEvent event) {
 
         }
 
