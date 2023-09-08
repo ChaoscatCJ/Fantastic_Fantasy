@@ -8,11 +8,11 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModCreativeModeTabs {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Fantastic_Fantasy.MOD_ID);
+public class ModCreativeModTabs {
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MOD_TABS =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB).ModItems.Fantastic_Fantasy.MOD_ID;
 
-    public static final RegistryObject<CreativeModeTab> TUTORIAL_TAB = CREATIVE_MODE_TABS.register("fantastic_fantasy_tab",
+    public static final RegistryObject<CreativeModeTab> TUTORIAL_TAB = CREATIVE_MOD_TABS.register("fantastic_fantasy_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(net.ChaoscatCJ.FantasticFantasy.item.ModItems.STAR_METAL_INGOT.get()))
                     .title(Component.translatable("creativetab.tutorial_tab"))
                     .displayItems((pParameters, pOutput) -> {
@@ -25,6 +25,6 @@ public class ModCreativeModeTabs {
 
 
     public static void register(IEventBus eventBus) {
-        CREATIVE_MODE_TABS.register(eventBus);
+        CREATIVE_MOD_TABS.register(eventBus);
     }
 }

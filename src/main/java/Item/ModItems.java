@@ -16,6 +16,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
 
-    public static void register(IEventBus eventBus) {Fantastic_Fantasy.register(eventBus);
+    public static void register(IEventBus eventBus) {
+        eventBus.register(Fantastic_Fantasy);
     }
 }
